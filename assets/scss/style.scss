@@ -1,0 +1,106 @@
+/*
+    SCSSその1: 変数と四則演算が使用できる
+
+*/
+$padding-value: 40px;
+$title-color: #ff0000;
+
+h1 {
+    padding: 0 ($padding-value / 2);
+    color: $title-color;
+}
+
+/*
+    SCSSその2: ネストができる
+*/
+nav {
+    width: 100%;
+    ul {
+        height: auto;
+        li {
+            list-style-type:circle;
+            color: #ffae00;
+            a {
+                color: #666666;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/*
+    SCSSその3: 親参照セレクタ (&)
+*/
+.sub {
+    float: right;
+    width: 200px;
+    background: #aaaaaa;
+    font-size: 18px;
+    .body-top & {
+        background: #ffffff;
+    }
+    .article-top & {
+        background: #cccccc;
+    }
+    & .title {
+        font-size: 14px;
+    }
+    & .description {
+        font-size: 12px;
+    }
+}
+
+/*
+    SCSSその4: mixinで定義のつかいまわし
+
+    ---------
+    1. 雛形となるCSS定義のまとまりを作る
+    ---------
+    @mixin 名前($変数1, $変数2, ...) {
+        プロパティ1:$変数1;
+        プロパティ2:$変数2;
+        ...という風にCSS指定の雛形を作ることができる
+    }
+
+    ---------
+    2. 任意のIDやクラス名にインクルードして使用する
+    ---------
+    任意のIDやクラス名 {
+        @include 名前($変数1, $変数2, ...);
+    }
+*/
+@mixin boxDefinition($px:0, $style:solid, $color:#dddddd) {
+    border: $px $style $color;
+}
+
+.box {
+    @include boxDefinition(1px, solid, #666666);
+}
+
+/*
+    SCSSその5: セレクタの継承
+
+    ---------
+    1. 継承元
+    ---------
+    継承元の任意のIDやクラス名 {
+        ...
+    }
+
+    ---------
+    2. 継承先
+    ---------
+    継承先の任意のIDやクラス名 {
+        @extend 継承元の任意のIDやクラス名;
+        変更するプロパティ: 変更する値;
+    }
+*/
+body {
+    font-family: ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
+    font-size: 14px;
+}
+
+.mainTitle {
+    @extend body;
+    font-size: 20px;
+}
