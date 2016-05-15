@@ -75,9 +75,9 @@ Sassとは「Syntactically Awesome Style Sheets」の略
 
 __（SCSSに関しての部分はこちら）__   
 ・それほど便利ではないSass（SCSS）について語る   
-https://tukumemo.com/sass-not-really/
+https://tukumemo.com/sass-not-really/   
 ・Sass(scss)の簡単な使い方まとめ   
-http://designup.jp/sass-compass-install-86/
+http://designup.jp/sass-compass-install-86/   
 ・Sass（SCSS）は難しくないよ！私なりの使い方をご紹介！   
 http://www.tam-tam.co.jp/tipsnote/html_css/post5189.html
 
@@ -233,7 +233,7 @@ gulp.task('default', ['server', 'sass-watch', 'css-watch', 'html-watch']);
 
 __（参考）__   
 ・スマホでも使える！パフォーマンスアップの為のCSS記述方法   
-http://all-web-blog.blogspot.jp/2011/07/css.html
+http://all-web-blog.blogspot.jp/2011/07/css.html   
 ・【保存版】クオリティアップ！gulp.jsで文法チェック！   
 http://www.web-genba.com/entry/2015/05/28/003000
 
